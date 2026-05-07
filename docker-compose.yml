@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: tenderguard_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./cert.pem:/app/certs/cert.pem:ro
+      - ./key.pem:/app/certs/key.pem:ro
+    environment:
+      - JWT_SECRET=supersecret_tenderguard_key_2026
+      - MODEL_NAME=distilbert-base-uncased-finetuned-sst-2-english
+    networks:
+      - tenderguard_net
+
+  frontend:
+    build: ./frontend
+    container_name: tenderguard_frontend
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./cert.pem:/app/certs/cert.pem:ro
+      - ./key.pem:/app/certs/key.pem:ro
+    environment:
+      - BACKEND_URL=https://backend:8000
+    depends_on:
+      - backend
+    networks:
+      - tenderguard_net
+
+networks:
+  tenderguard_net:
+    driver: bridge
