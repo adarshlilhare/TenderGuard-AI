@@ -33,5 +33,5 @@ USER tenderguard
 # Expose port
 EXPOSE 8000
 
-# Run FastAPI app with HTTPS
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--ssl-keyfile", "/app/certs/key.pem", "--ssl-certfile", "/app/certs/cert.pem"]
+# Run FastAPI app (Flexible for Local SSL or Cloud Deployment)
+CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000} ${SSL_KEYFILE:+--ssl-keyfile $SSL_KEYFILE} ${SSL_CERTFILE:+--ssl-certfile $SSL_CERTFILE}

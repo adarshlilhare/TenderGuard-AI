@@ -13,6 +13,8 @@ services:
     environment:
       - JWT_SECRET=supersecret_tenderguard_key_2026
       - MODEL_NAME=distilbert-base-uncased-finetuned-sst-2-english
+      - SSL_CERTFILE=/app/certs/cert.pem
+      - SSL_KEYFILE=/app/certs/key.pem
     networks:
       - tenderguard_net
 
@@ -26,6 +28,8 @@ services:
       - ./key.pem:/app/certs/key.pem:ro
     environment:
       - BACKEND_URL=https://backend:8000
+      - STREAMLIT_SERVER_SSL_CERT_FILE=/app/certs/cert.pem
+      - STREAMLIT_SERVER_SSL_KEY_FILE=/app/certs/key.pem
     depends_on:
       - backend
     networks:

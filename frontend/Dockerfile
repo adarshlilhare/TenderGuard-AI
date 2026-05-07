@@ -25,4 +25,5 @@ USER tenderguard
 
 EXPOSE 8501
 
-CMD ["streamlit", "run", "app.py"]
+# Run Streamlit (Flexible for Local SSL or Cloud Deployment)
+CMD streamlit run app.py --server.port ${PORT:-8501} ${STREAMLIT_SERVER_SSL_CERT_FILE:+--server.sslCertFile $STREAMLIT_SERVER_SSL_CERT_FILE} ${STREAMLIT_SERVER_SSL_KEY_FILE:+--server.sslKeyFile $STREAMLIT_SERVER_SSL_KEY_FILE}

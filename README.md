@@ -63,6 +63,24 @@ graph TD
         *   **Username:** `admin`
         *   **Password:** `admin123`
 
+## 🚀 Deployment on Railway
+
+The project is structured to be easily deployable on [Railway](https://railway.app/).
+
+### 1. Backend Service
+*   **Root Directory:** `/backend`
+*   **Environment Variables:** 
+    *   `JWT_SECRET`: (Your secret key)
+*   **Networking:** Generate a domain or use the internal Railway URL.
+
+### 2. Frontend Service
+*   **Root Directory:** `/frontend`
+*   **Environment Variables:**
+    *   `BACKEND_URL`: The URL of your deployed Backend service.
+*   **Networking:** Generate a public domain.
+
+*(Note: Railway terminates SSL automatically, so you don't need to configure SSL environment variables there).*
+
 ## 🧠 AI for Bharat Hackathon Context
 
 This project addresses the critical need for secure, localized AI solutions in sensitive sectors like government and defense procurement.
