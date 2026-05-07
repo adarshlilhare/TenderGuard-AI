@@ -11,5 +11,6 @@ sleep 5
 # Start the Streamlit frontend in the foreground
 echo "Starting Frontend..."
 cd /app/frontend
+export BACKEND_URL=http://localhost:8000
 # Hugging Face expects the app to be on port 7860
 streamlit run app.py --server.port 7860 --server.address 0.0.0.0
