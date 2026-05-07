@@ -11,6 +11,8 @@ pinned: false
 
 **Zero-Trust Automated Tender Evaluation System**
 
+👉 **[Live Demo on Hugging Face Spaces](https://huggingface.co/spaces/adarshlilhare5000/TenderGuard-AI)**
+
 Built for the **AI for Bharat Hackathon**, TenderGuard AI is a highly secure, air-gapped prototype designed to automate the evaluation of defense and government tenders. By utilizing a Zero-Trust architecture and local NLP models, it ensures that sensitive procurement data never leaves the local environment while providing rapid, accurate analysis of financial turnover, certifications, and risk metrics.
 
 ## 🌟 Key Features
@@ -39,7 +41,7 @@ graph TD
     NLP -->|Risk Score & Sentiment| Backend
 ```
 
-## 🚀 Getting Started
+## 🚀 Getting Started in Local PC
 
 ### Prerequisites
 
@@ -71,24 +73,6 @@ graph TD
     *   **Login Credentials:**
         *   **Username:** `admin`
         *   **Password:** `admin123`
-
-## 🚀 Deployment on Railway
-
-The project is structured to be easily deployable on [Railway](https://railway.app/).
-
-### 1. Backend Service
-*   **Root Directory:** `/backend`
-*   **Environment Variables:** 
-    *   `JWT_SECRET`: (Your secret key)
-*   **Networking:** Generate a domain or use the internal Railway URL.
-
-### 2. Frontend Service
-*   **Root Directory:** `/frontend`
-*   **Environment Variables:**
-    *   `BACKEND_URL`: The URL of your deployed Backend service.
-*   **Networking:** Generate a public domain.
-
-*(Note: Railway terminates SSL automatically, so you don't need to configure SSL environment variables there).*
 
 ## 🧠 AI for Bharat Hackathon Context
 
