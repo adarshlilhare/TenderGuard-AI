@@ -1,3 +1,12 @@
+---
+title: TenderGuard AI
+emoji: 🛡️
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 7860
+pinned: false
+---
 # 🛡️ TenderGuard AI
 
 **Zero-Trust Automated Tender Evaluation System**
